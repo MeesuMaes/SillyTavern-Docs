@@ -3,6 +3,6 @@ redirect: /installation/updating
 visibility: hidden
 ---
 
-# Updating
+# 更新
 
-This page has been moved to [Installation > Updating](/Installation/Updating). You will be redirected there shortly. If you are not redirected, click [here](/Installation/Updating).
+此页面已移至 [安装 > 更新](/Installation/Updating)。您将很快被重定向到那里。如果您未被重定向，请点击[此处](/Installation/Updating)。
