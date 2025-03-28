@@ -3,66 +3,66 @@ order: 112
 route: /installation/st-1.12.0-migration-guide/
 ---
 
-# 1.12.0 Migration Guide
+# 1.12.0 迁移指南
 
-SillyTavern 1.12.0 (codename the "Neo Server" update) includes several critical changes that may affect the way you use SillyTavern.
+SillyTavern 1.12.0（代号“Neo Server”更新）包含若干关键更改，可能会影响您使用 SillyTavern 的方式。
 
-This guide will prepare you for the update and provide some further guidance.
+本指南将帮助您为更新做好准备，并提供进一步的指导。
 
-## Data storage update
+## 数据存储更新
 
-1.12.0 changes the way SillyTavern handles the user data.
+1.12.0 更改了 SillyTavern 处理用户数据的方式。
 
-Previously, all of the persistent data was stored together with the frontend part in the `/public` directory, which created confusion and potential points of failure, as well as making containerization and system-wide app installation quite challenging.
+之前，所有持久数据都与前端部分一起存储在 `/public` 目录中，这造成了混乱和潜在的故障点，同时也使得容器化和系统范围的应用安装变得相当具有挑战性。
 
-### What's changed?
+### 发生了什么变化？
 
-All persistent information from `/public` such as settings and chats (full list below) was moved into a separate directory with the configurable path, making it portable and independent from the web server itself. When needed for compatibility purposes, for example, for hosting extensions, full-size character cards, user image uploads, etc. a smart redirect has been set up to automatically host user files from the data directory.
+所有来自 `/public` 的持久信息，例如设置和聊天记录（完整列表见下文），都被移动到一个独立的、可配置路径的目录中，使其便携且独立于 Web 服务器本身。为了兼容性需要，例如托管扩展、全尺寸角色卡、用户上传的图片等，已设置智能重定向，自动从数据目录中托管用户文件。
 
-### Setting a data root
+### 设置数据根目录
 
-You can provide either an absolute or a relative (to the ST repository directory) path to the data root either by `config.yaml` or by starting the server with the `--dataRoot` console argument.
+您可以通过 `config.yaml` 或在启动服务器时使用 `--dataRoot` 控制台参数，提供数据根目录的绝对路径或相对路径（相对于 ST 仓库目录）。
 
-> YAML example
+> YAML 示例
 
 ```yaml
-# -- DATA CONFIGURATION --
-# Root directory for user data storage
+# -- 数据配置 --
+# 用户数据存储的根目录
 dataRoot: C:\Users\Harry\Documents\ST-Data
 ```
 
-> Console example
+> 控制台示例
 
 ```bash
 node server.js --dataRoot="/Users/harry/ST-Data"
-# OR
+# 或
 npm run start -- --dataRoot="/Users/harry/ST-Data"
 ```
 
-The default data root path is `./data`, which means the `data` directory in SillyTavern's repository.
+默认数据根路径是 `./data`，即 SillyTavern 仓库中的 `data` 目录。
 
-!!! info Note
-The data root path should be either a **full absolute** or a **full relative** path. You _can't_ use path shortcuts like `~` or `%APP_DATA%`, as these are resolved by a shell, not the operating system.
+!!! info 注意
+数据根路径应为**完整的绝对路径**或**完整的相对路径**。您_不能_使用像 `~` 或 `%APP_DATA%` 这样的路径快捷方式，因为这些是由 shell 而非操作系统解析的。
 !!!
 
-### Migration
+### 迁移
 
-#### **IMPORTANT!** Before we begin
+#### **重要！** 开始之前
 
-1. **Only if you want to move dataRoot from the default location. Otherwise, skip this part.** Set the data root _before_ first running the server after pulling an update. Run `npm install` for the `config.yaml` to populate with a new value, or pass a console argument.
-2. All data will be migrated into a `default-user` account. See more on [Users](#users) below.
+1. **仅当您想将 dataRoot 从默认位置移动时执行此部分，否则跳过。** 在拉取更新后首次运行服务器之前设置数据根目录。运行 `npm install` 以使 `config.yaml` 更新为新值，或传递控制台参数。
+2. 所有数据将迁移到 `default-user` 账户中。有关更多信息，请参见下文的 [用户](#users)。
 
-#### Containerless (bare metal) installs
+#### 无容器（裸机）安装
 
-You don't have to do anything! An automatic migration should handle everything for you when you start the ST server and it detects the old storage format (by checking the existence of the `/public/characters` directory).
+您无需做任何操作！当您启动 ST 服务器并检测到旧存储格式（通过检查 `/public/characters` 目录是否存在）时，自动迁移将为您处理一切。
 
-Upon moving any files, an automatic backup will be created in the `/backups/_migration/YYYY-MM-DD` (resolved to the current date) directory, but it is always a good practice to make a full manual backup before running the migration.
+在移动任何文件时，将在 `/backups/_migration/YYYY-MM-DD`（解析为当前日期）目录中自动创建备份，但运行迁移前进行完整的手动备份始终是一个好习惯。
 
-#### Containerized (Docker) installs
+#### 容器化（Docker）安装
 
-Migrating the data in Docker volumes is a bit trickier but pretty straightforward. While `docker-compose.yml` provided with the repo was updated to reflect the changes, you may need to adjust your custom workflows/deployments.
+在 Docker 卷中迁移数据稍显复杂，但相当直接。虽然仓库提供的 `docker-compose.yml` 已更新以反映这些变化，但您可能需要调整自定义工作流程/部署。
 
-**Step 1.** Create a new volume, and mount it to the "/home/node/app/data" path within the container. Don't remove the `config` volume.
+**步骤 1.** 创建一个新卷，并将其挂载到容器内的 "/home/node/app/data" 路径。不要移除 `config` 卷。
 
 ```yaml
 volumes:
@@ -70,19 +70,19 @@ volumes:
     - "./data:/home/node/app/data"
 ```
 
-**Step 2.** Move everything but the `config.yaml` file from the `config` volume into the `default-user` subdirectory of the `data` volume.
+**步骤 2.** 将 `config` 卷中的所有内容（除了 `config.yaml` 文件）移动到 `data` 卷的 `default-user` 子目录中。
 
-**Step 3.** Rebuild the container and start it up.
+**步骤 3.** 重建容器并启动。
 
-!!! info Note
-Soft links between the `/public` directory and the `config` volume are no longer needed and are not built into the Docker container!
+!!! info 注意
+`/public` 目录与 `config` 卷之间的软链接不再需要，也未内置于 Docker 容器中！
 !!!
 
-#### What to migrate?
+#### 需要迁移的内容？
 
-The following files and directories are subject to the data migration. Assuming the default configuration, the before and after paths are provided in the table below.
+以下文件和目录需要进行数据迁移。假设使用默认配置，下表提供了迁移前后的路径。
 
-| Before                                 | After                                |
+| 之前                                   | 之后                                 |
 |----------------------------------------|--------------------------------------|
 | /secrets.json                          | /data/default-user/secrets.json      |
 | /thumbnails                            | /data/default-user/thumbnails        |
@@ -108,8 +108,8 @@ The following files and directories are subject to the data migration. Assuming 
 | /public/worlds                         | /data/default-user/worlds            |
 | /default/content/content.log           | /data/default-user/content.log       |
 
-## Users
+## 用户
 
-1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.
+1.12.0 添加了一个（完全可选的）功能，允许在同一服务器上创建多用户设置，使多个用户能够同时使用各自完全隔离的 SillyTavern 实例。用户账户还可以设置密码保护，以增加额外的隐私层。
 
-Please refer to the [Users](/Administration/multi-user.md) documentation for more information.
+请参阅 [用户](/Administration/multi-user.md) 文档以获取更多信息。

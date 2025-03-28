@@ -1,84 +1,84 @@
 ---
-label: Updating
+label: 更新
 icon: repo-pull
 order: -1
 expanded: false
 ---
 
-# How to Update SillyTavern
+# 如何更新 SillyTavern
 
-Find your OS below and follow the instructions to update ST.
+找到您使用的操作系统，按照以下说明更新 ST。
 
-!!! For installation instructions, see the [Installation](/Installation/index.md) page.
+!!! 安装说明请参见 [安装](/Installation/index.md) 页面。
 
-This guide assumes you have already installed and run SillyTavern at least once.
+本指南假设您已经至少安装并运行过一次 SillyTavern。
 !!!
 
 ----
 
-## Linux/Termux or MacOS
+## Linux/Termux 或 MacOS
 
-You definitely installed via git, so just 'git pull' inside the SillyTavern directory.
+您肯定是通过 Git 安装的，因此只需在 SillyTavern 目录内运行 `git pull`。
 
-- `cd SillyTavern` to enter the correct folder.
-- `git pull` to get the update.
-- `./start.sh` or `bash start.sh` to start ST.
+- `cd SillyTavern` 进入正确的文件夹。
+- `git pull` 获取更新。
+- `./start.sh` 或 `bash start.sh` 启动 ST。
 
 ----
 
 ## Windows
 
->First try using the `UpdateAndStart.bat` which is located in your SillyTavern installation base folder.
+> 首先尝试使用位于 SillyTavern 安装根文件夹中的 `UpdateAndStart.bat`。
 
-If that fails, come back here and continue reading.
+如果失败，请返回此处继续阅读。
 
-### Method 1 - GIT
+### 方法 1 - GIT
 
-We always recommend users install using 'git'. Here's why:
+我们始终推荐用户使用 `git` 安装。原因如下：
 
-When you have installed via `git clone`, all you have to do to update is type `git pull` [in a command line in the ST folder](https://www.google.com/search?q=how+to+open+command+prompt+in+a+folder).
-Alternatively, if the command prompt gives you problems (and you have GitHub Desktop installed), you can use the `Repository` menu and select `Pull`.
+当您通过 `git clone` 安装后，只需在 ST 文件夹内[打开命令行](https://www.google.com/search?q=how+to+open+command+prompt+in+a+folder)并输入 `git pull` 即可更新。
+或者，如果命令提示符出现问题（且已安装 GitHub Desktop），您可以使用 `Repository` 菜单并选择 `Pull`。
 
-The updates are applied automatically and safely.
+更新将自动且安全地应用。
 
-#### "Help I originally installed via Zip and now want to convert to Git install"
+#### “救命！我最初通过 Zip 安装，现在想转换为 Git 安装”
 
-You have chosen a wise path.
+您选择了一条明智的道路。
 
-Since your installation was done via Zip, you will need to make a new install using git.
+由于您的安装是通过 Zip 完成的，您需要使用 Git 进行全新安装。
 
-Thankfully we have [instructions](/Installation/Windows.md) on how to do so.
+幸运的是，我们提供了[说明](/Installation/Windows.md)来指导您完成此操作。
 
-Once you have used git to install a NEW SillyTavern into a DIFFERENT folder, come back to this page and proceed to **Step 4** of the 'Zip Update' instructions below.
+一旦您使用 Git 在一个不同的文件夹中安装了新的 SillyTavern，请返回本页面并按照下方“Zip 更新”说明的 **步骤 4** 继续操作。
 
-### Method 2 - ZIP
+### 方法 2 - ZIP
 
-If you insist on installing via a zip, here is the tedious process for doing the update:
+如果您坚持使用 Zip 安装，以下是更新时的繁琐过程：
 
-1. Download the new release zip.
-2. Unzip it into a folder OUTSIDE of your current ST installation.
-3. Do the usual setup procedure for your OS to install NodeJS requirements.
+1. 下载新的发布版 Zip 文件。
+2. 将其解压到当前 ST 安装之外的一个文件夹中。
+3. 按照您操作系统的常规设置步骤安装 NodeJS 依赖。
 
-4. Copy the following files/folders as necessary(*) from your old ST installation:
+4. 根据需要(*)从旧 ST 安装中复制以下文件/文件夹：
 
-    (*) 'As necessary' = "If you made any custom content related to those folders".
+    (*) “根据需要” = “如果您对这些文件夹创建了任何自定义内容”。
+
+    #### 更新至 >=1.12.0
     
-    #### Updating >=1.12.0
+    将 `/data` 目录和 `config.yaml` 文件从一个安装复制到另一个安装。
     
-    Copy the `/data` directory and `config.yaml` file from one installation to another.
+    #### 从 <1.12.0 更新至 >1.12.0
     
-    #### Updating from <1.12.0 to >1.12.0
-    
-    1.12.0 includes an automated migration procedure. The steps below are required *only* if the migration was interrupted or errored.
+    1.12.0 包含自动迁移程序。以下步骤仅在迁移中断或出错时需要执行。
 
-5. Run the updated server install at least once to create the `/data/default-user` directory.
-6. Transfer the files from old `/public` to new `/data/default-user` as necessary.
+5. 运行更新后的服务器安装至少一次，以创建 `/data/default-user` 目录。
+6. 根据需要将旧 `/public` 中的文件转移到新 `/data/default-user` 中。
     
-    None of the folders are mandatory, so only copy what you need.
+    没有文件夹是强制性的，因此只复制您需要的部分。
     
-    **NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER**
+    **注意：不要复制整个 /public/ 文件夹**
     
-    Doing so could break the new install and prevent new features from being present.
+    这样做可能会破坏新安装并阻止新功能的出现。
     
     ```plaintext
     Assets
@@ -100,20 +100,20 @@ If you insist on installing via a zip, here is the tedious process for doing the
     Worlds
     User
     settings.json
-    secrets.json <---- this one is in the base folder, not /public/
+    secrets.json <---- 这个文件在根文件夹中，而不是 /public/
     ```
 
-7. Once those folders/files are copied, paste them into the /data/default-user folder (with secrets.json going into the folder root) of the new install.
-8. Start SillyTavern once again with the method appropriate to your OS, and pray you got it right.
-9. If everything shows up, you can safely delete the old ST folder.
+7. 将这些文件夹/文件复制后，将它们粘贴到新安装的 /data/default-user 文件夹中（secrets.json 放入文件夹根目录）。
+8. 使用适合您操作系统的方法再次启动 SillyTavern，并祈祷一切顺利。
+9. 如果一切正常显示，您可以安全删除旧 ST 文件夹。
 
-### Common Update Problems
+### 常见更新问题
 
-#### "There are unresolved conflicts in the working directory."
+#### “工作目录中存在未解决的冲突。”
 
-This means that you've modified default files that have been changed in the remote repository (such as setting presets).
+这意味着您修改了远程仓库中已更改的默认文件（例如设置预设）。
 
-To fix this, run this in the terminal. Use cautiously, as it can be destructive. Make sure to have a backup if needed.
+要解决此问题，请在终端中运行以下命令。请谨慎使用，因为这可能具有破坏性。如有需要，请先备份。
 
 ```bash
 git merge --abort
@@ -121,19 +121,19 @@ git reset --hard
 git pull --rebase --autostash
 ```
 
-#### File changes prevent git pull
+#### 文件更改阻止 git pull
 
-- If you change SillyTavern system files, `git pull` may not work.
-- Sometimes an update may require us to change an important file, which can cause the same problem.
-- Usually it is default preset files or `package-lock.json`.
-- In this case you can try moving the file to a different folder (or deleting the file) and then do `git pull`.
-- Another solution is using `git pull --rebase --autostash`
+- 如果您更改了 SillyTavern 系统文件，`git pull` 可能无法工作。
+- 有时更新可能需要我们更改重要文件，也会导致同样的问题。
+- 通常是默认预设文件或 `package-lock.json`。
+- 在这种情况下，您可以尝试将文件移动到其他文件夹（或删除文件），然后执行 `git pull`。
+- 另一种解决方案是使用 `git pull --rebase --autostash`
 
-#### Error: Cannot find module "***" when starting the server
+#### 启动服务器时出错：“无法找到模块 ‘***’”
 
-- This means that SillyTavern added a new npm package requirement.
-- Run `npm install` in the SillyTavern directory to fix this. Provided Start.bat and start.sh scripts will do that automatically.
-- Didn't help? Remove the node_modules folder
+- 这意味着 SillyTavern 添加了新的 npm 包依赖。
+- 在 SillyTavern 目录中运行 `npm install` 以解决问题。提供的 Start.bat 和 start.sh 脚本会自动执行此操作。
+- 没用？删除 node_modules 文件夹
 
 **Windows**
 
@@ -153,22 +153,21 @@ npm install
 
 ## Docker
 
-1. Open a terminal window and navigate to your docker directory `cd SillyTavern/docker`
-2. Delete your container with `docker compose down`
-3. Delete the SillyTavern docker image from cache `docker rmi ghcr.io/sillytavern/sillytavern:latest` (Replace `sillytavern:latest` with `sillytavern:staging` if you are targeting the staging branch.)
-4. Rebuild the container with `sudo docker compose up -d`
+1. 打开终端窗口并导航到您的 Docker 目录 `cd SillyTavern/docker`
+2. 使用 `docker compose down` 删除您的容器
+3. 从缓存中删除 SillyTavern Docker 镜像 `docker rmi ghcr.io/sillytavern/sillytavern:latest`（如果您目标是 staging 分支，请将 `sillytavern:latest` 替换为 `sillytavern:staging`。）
+4. 使用 `sudo docker compose up -d` 重建容器
 
-If everything goes smoothly, docker should start redownloading the image, and you will be up and running shortly. If you face any issues, refer to the next section of this guide.
+如果一切顺利，Docker 应开始重新下载镜像，您很快就能正常运行。如果遇到任何问题，请参考本指南的下一部分。
 
-### Common Update Problems
-#### I use Docker and all my data is gone after the update!
+### 常见更新问题
+#### 我使用 Docker，更新后所有数据都丢失了！
 
-You must follow the [Migration guide for Docker containers](/Installation/Updating/ST-1.12.0-Migration-Guide.md#containerized-docker-installs)
- to update volume mappings for the new data model introduced in 1.12.0
+您必须按照 [Docker 容器的迁移指南](/Installation/Updating/ST-1.12.0-Migration-Guide.md#containerized-docker-installs) 更新 1.12.0 引入的新数据模型的卷映射。
 
-#### Permission denied when running docker commands
+#### 运行 Docker 命令时出现“权限被拒绝”
 
-This is a Linux issue, and implies that your permissions are not properly set up. There are two ways to get around this:
+这是 Linux 的问题，表明您的权限未正确设置。有两种解决方法：
 
-1. **The Easy method**: If you have sudo access on your user, simply prefix commands with `sudo` (for example: `sudo docker compose down`) 
-2. **The Proper method**: Fix your permissions. This varies depending on the version of Linux you use. There are plenty of guides online to help you fix this issue.
+1. **简单方法**：如果您的用户有 sudo 权限，只需在命令前加上 `sudo`（例如：`sudo docker compose down`）
+2. **正确方法**：修复您的权限。这取决于您使用的 Linux 版本。网上有许多指南可以帮助您解决此问题。

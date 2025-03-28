@@ -3,66 +3,66 @@
 label: Docker
 ---
 
-# Docker Installation
+# Docker 安装
 
 !!! info
-This guide assumes you installed SillyTavern in a non-root (non-admin) folder. If you installed SillyTavern in a root folder, you may have to run some of these commands with administrator rights [`sudo`, `doas`, Command Prompt (Administrator)].
+本指南假设您将 SillyTavern 安装在非根（非管理员）文件夹中。如果您将 SillyTavern 安装在根文件夹中，可能需要以管理员权限运行部分命令（例如 `sudo`、`doas` 或以管理员身份运行命令提示符）。
 !!!
 
-## Installation
+## 安装
 
 ### Linux
 
-1. Install Docker by following the Docker installation guide [here](https://docs.docker.com/engine/install/).
+1. 按照 Docker 安装指南 [此处](https://docs.docker.com/engine/install/) 安装 Docker。
    !!! danger
-   **Do not** install Docker Desktop.
+   **不要** 安装 Docker Desktop。
    !!!
-2. Follow the steps in **Manage Docker as a non-root user** in the Docker [Post-Installation Guide](https://docs.docker.com/engine/install/linux-postinstall/).
-3. Install [Git](https://git-scm.com/download/linux) using your package manager.
+2. 按照 Docker [安装后指南](https://docs.docker.com/engine/install/linux-postinstall/) 中的 **以非根用户管理 Docker** 步骤操作。
+3. 使用您的包管理器安装 [Git](https://git-scm.com/download/linux)。
 
-    - Debian (Ubuntu/Pop! OS/etc.)
+    - Debian (Ubuntu/Pop! OS 等)
 
         ```sh
         sudo apt install git
         ```
 
-    - Arch Linux (Manjaro/EndeavourOS/etc.)
+    - Arch Linux (Manjaro/EndeavourOS 等)
 
         ```sh
         sudo pacman -S git
         ```
 
-    - Fedora, Red Hat Enterprise Linux (RHEL), etc.
+    - Fedora, Red Hat Enterprise Linux (RHEL) 等
         ```sh
         sudo dnf install git
         ```
 
-4. Clone the SillyTavern repository.
+4. 克隆 SillyTavern 仓库。
 
-    - Release (Stable Branch)
+    - Release (稳定分支)
 
         ```sh
         git clone https://github.com/SillyTavern/SillyTavern && cd SillyTavern/docker
         ```
 
-    - Staging (Development Branch)
+    - Staging (开发分支)
         ```sh
         git clone https://github.com/SillyTavern/SillyTavern -b staging && cd SillyTavern/docker
         ```
 
-5. Execute `docker compose` by running the following command within the Docker folder.
+5. 在 Docker 文件夹内运行以下命令执行 `docker compose`。
 
     ```sh
     docker compose up -d
     ```
 
-6. Execute the following Docker command to obtain the IP of your SillyTavern Docker container.
+6. 执行以下 Docker 命令以获取 SillyTavern Docker 容器的 IP。
 
     ```sh
     docker network inspect docker_default
     ```
 
-    You should receive some sort of output similar to the following below.
+    您应该会看到类似于以下内容的输出。
 
     ```json
     [
@@ -80,22 +80,22 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
     ]
     ```
 
-    Copy down the IP you see in _Gateway_ as this will be important.
+    记下 _Gateway_ 中显示的 IP，这将很重要。
 
-7. Using `sudo`, open `nano` and run the following command.
+7. 使用 `sudo` 打开 `nano`，并运行以下命令。
 
     ```sh
     sudo nano config/config.yaml
     ```
 
-    Within `nano`, go down to `whitelist`. You should see something similar to the following below.
+    在 `nano` 中，找到 `whitelist`。您应该会看到类似于以下内容。
 
     ```yaml
     whitelist:
         - 127.0.0.1
     ```
 
-    Add a new line below _127.0.0.1_ and put in the IP you copied from Docker. It should look something similar to the following afterwards.
+    在 _127.0.0.1_ 下方添加一行，输入您从 Docker 复制的 IP。完成后应类似于以下内容。
 
     ```yaml
     whitelist:
@@ -103,58 +103,58 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
         - 172.18.0.1
     ```
 
-    Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
+    按 _Ctrl+S_ 保存文件，然后按 _Ctrl+X_ 退出 `nano`。
 
     !!! info
-    Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+    请注意，如果您将 Docker 网络配置为桥接模式，您也可以照常将外部 IP 地址添加到白名单。
     !!!
 
-8. Restart the Docker Container to apply the new configuration.
+8. 重启 Docker 容器以应用新配置。
 
     ```sh
     docker compose restart sillytavern
     ```
 
-9. Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+9. 打开一个新浏览器，访问 [http://localhost:8000](http://localhost:8000)。几秒钟后，您应该会看到 SillyTavern 加载完成。
 
-10. Enjoy! :D
+10. 尽情享受吧！ :D
 
 ### Windows
 
-!!! warning Regarding Docker on Windows
-Using Docker on Windows is **_really_** complicated. Not only do you need to activate _Windows Subsystem for Linux_ within _Turn Windows features on or off_, but also configure your system for Virtualization (Intel VT-d/AMD SVM) which differs from PC manufacturer to PC manufacturer (or motherboard manufacturer). Sometimes, this option is not present on some systems.
+!!! warning 关于在 Windows 上使用 Docker
+在 Windows 上使用 Docker **非常** 复杂。您不仅需要在“启用或关闭 Windows 功能”中激活 _Windows 子系统 Linux_，还需要为您的系统配置虚拟化（Intel VT-d/AMD SVM），而这因 PC 制造商或主板制造商而异。有时，某些系统上可能没有此选项。
 
-It is highly suggested you install SillyTavern by following our [Windows](/Installation/Windows.md) guide. This section is a _rough_ idea of how it can be done on Windows.
+强烈建议您按照我们的 [Windows](/Installation/Windows.md) 指南安装 SillyTavern。本节仅提供在 Windows 上实现的大致思路。
 !!!
 
-1.  Install Docker Desktop by following the Docker installation guide [here](https://docs.docker.com/desktop/setup/install/windows-install/).
-2.  Install [Git for Windows](https://git-scm.com/download/win).
-3.  Clone the SillyTavern repository.
+1. 按照 Docker 安装指南 [此处](https://docs.docker.com/desktop/setup/install/windows-install/) 安装 Docker Desktop。
+2. 安装 [Git for Windows](https://git-scm.com/download/win)。
+3. 克隆 SillyTavern 仓库。
 
-    -   Release (Stable Branch)
+    - Release (稳定分支)
 
         ```sh
         git clone https://github.com/SillyTavern/SillyTavern && cd SillyTavern/docker
         ```
 
-    -   Staging (Development Branch)
+    - Staging (开发分支)
         ```sh
         git clone https://github.com/SillyTavern/SillyTavern -b staging && cd SillyTavern/docker
         ```
 
-4.  Execute `docker compose` by running the following command within the Docker folder.
+4. 在 Docker 文件夹内运行以下命令执行 `docker compose`。
 
     ```sh
     docker compose up -d
     ```
 
-5.  Execute the following Docker command to obtain the IP of your SillyTavern Docker container.
+5. 执行以下 Docker 命令以获取 SillyTavern Docker 容器的 IP。
 
     ```sh
     docker network inspect docker_default
     ```
 
-    You should receive some sort of output similar to the following below.
+    您应该会看到类似于以下内容的输出。
 
     ```json
     [
@@ -172,18 +172,18 @@ It is highly suggested you install SillyTavern by following our [Windows](/Insta
     ]
     ```
 
-    Copy down the IP you see in _Gateway_ as this will be important.
+    记下 _Gateway_ 中显示的 IP，这将很重要。
 
-6.  Running _Notepad_ or a code editor of your choice with administrator rights, go to `config` and open _config.yaml_.
+6. 以管理员权限运行 _记事本_ 或您选择的代码编辑器，进入 `config` 文件夹并打开 _config.yaml_。
 
-    Within the editor of your choice, you should see something similar to the following below.
+    在您选择的编辑器中，您应该会看到类似于以下内容。
 
     ```yaml
     whitelist:
         - 127.0.0.1
     ```
 
-    Add a new line below _127.0.0.1_ and put in the IP you copied from Docker. It should look something similar to the following afterwards.
+    在 _127.0.0.1_ 下方添加一行，输入您从 Docker 复制的 IP。完成后应类似于以下内容。
 
     ```yaml
     whitelist:
@@ -191,62 +191,62 @@ It is highly suggested you install SillyTavern by following our [Windows](/Insta
         - 172.18.0.1
     ```
 
-    Save the file by pressing _Ctrl+S_ then exit your editor.
+    按 _Ctrl+S_ 保存文件，然后退出编辑器。
 
     !!! info
-    Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+    请注意，如果您将 Docker 网络配置为桥接模式，您也可以照常将外部 IP 地址添加到白名单。
     !!!
 
-7.  Restart the Docker Container to apply the new configuration.
+7. 重启 Docker 容器以应用新配置。
 
     ```sh
     docker compose restart sillytavern
     ```
 
-8.  Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+8. 打开一个新浏览器，访问 [http://localhost:8000](http://localhost:8000)。几秒钟后，您应该会看到 SillyTavern 加载完成。
 
-9.  Enjoy! :D
+9. 尽情享受吧！ :D
 
 ### macOS
 
 !!!
-Even though macOS is similar to Linux, it doesn't have the Docker Engine. You will have to install Docker Desktop similarly to Windows.
-You will also need to install [Homebrew](https://brew.sh/) in order to install Git on your Mac. This section is a _rough_ idea on how it can be done on macOS.
+尽管 macOS 与 Linux 相似，但它没有 Docker Engine。您需要像 Windows 一样安装 Docker Desktop。
+您还需要安装 [Homebrew](https://brew.sh/) 以在 Mac 上安装 Git。本节仅提供在 macOS 上实现的大致思路。
 !!!
 
-1.  Install Docker Desktop by following the Docker installation guide [here](https://docs.docker.com/desktop/setup/install/mac-install/).
-2.  Install `git` using Homebrew.
+1. 按照 Docker 安装指南 [此处](https://docs.docker.com/desktop/setup/install/mac-install/) 安装 Docker Desktop。
+2. 使用 Homebrew 安装 `git`。
 
     ```sh
     brew install git
     ```
 
-3.  Clone the SillyTavern repository.
+3. 克隆 SillyTavern 仓库。
 
-    -   Release (Stable Branch)
+    - Release (稳定分支)
 
         ```sh
         git clone https://github.com/SillyTavern/SillyTavern && cd SillyTavern/docker
         ```
 
-    -   Staging (Development Branch)
+    - Staging (开发分支)
         ```sh
         git clone https://github.com/SillyTavern/SillyTavern -b staging && cd SillyTavern/docker
         ```
 
-4.  Execute `docker compose` by running the following command within the Docker folder.
+4. 在 Docker 文件夹内运行以下命令执行 `docker compose`。
 
     ```sh
     docker compose up -d
     ```
 
-5.  Execute the following Docker command to obtain the IP of your SillyTavern Docker container.
+5. 执行以下 Docker 命令以获取 SillyTavern Docker 容器的 IP。
 
     ```sh
     docker network inspect docker_default
     ```
 
-    You should recieve some sort of output similar to the following below.
+    您应该会看到类似于以下内容的输出。
 
     ```json
     [
@@ -264,26 +264,26 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
     ]
     ```
 
-    Copy down the IP you see in _Gateway_ as this will be important.
+    记下 _Gateway_ 中显示的 IP，这将很重要。
 
-6.  Using `sudo`, open `nano` and run the following command.
+6. 使用 `sudo` 打开 `nano`，并运行以下命令。
 
     ```sh
     sudo nano config/config.yaml
     ```
 
     !!!
-    If you can't run `nano`, either install it via Homebrew or use TextEdit.
+    如果您无法运行 `nano`，可以通过 Homebrew 安装它，或使用 TextEdit。
     !!!
 
-    Within `nano`, go down to `whitelist`. You should see something similar to the following below.
+    在 `nano` 中，找到 `whitelist`。您应该会看到类似于以下内容。
 
     ```yaml
     whitelist:
         - 127.0.0.1
     ```
 
-    Add a new line below _127.0.0.1_ and put in the IP you copied from Docker. It should look something similar to the following afterwards.
+    在 _127.0.0.1_ 下方添加一行，输入您从 Docker 复制的 IP。完成后应类似于以下内容。
 
     ```yaml
     whitelist:
@@ -291,28 +291,28 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
         - 172.18.0.1
     ```
 
-    Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
+    按 _Ctrl+S_ 保存文件，然后按 _Ctrl+X_ 退出 `nano`。
 
     !!! info
-    Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+    请注意，如果您将 Docker 网络配置为桥接模式，您也可以照常将外部 IP 地址添加到白名单。
     !!!
 
-7.  Restart the Docker Container to apply the new configuration.
+7. 重启 Docker 容器以应用新配置。
 
     ```sh
     docker compose restart sillytavern
     ```
 
-8.  Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+8. 打开一个新浏览器，访问 [http://localhost:8000](http://localhost:8000)。几秒钟后，您应该会看到 SillyTavern 加载完成。
 
-9.  Enjoy! :D
+9. 尽情享受吧！ :D
 
-## Configuring SillyTavern
+## 配置 SillyTavern
 
-SillyTavern's configuration file (config.yaml) will be located within the `config` folder. Configuring the config file should be no different than configuring it without Docker, however you will need to run `nano` or a code editor with administrator rights in order to save your changes.
+SillyTavern 的配置文件 (config.yaml) 位于 `config` 文件夹中。配置此文件与不使用 Docker 的情况没有区别，但您需要以管理员权限运行 `nano` 或代码编辑器才能保存更改。
 
 !!! warning
-Don't forget to restart the Docker container for SillyTavern in order to apply your changes! Make sure you execute this command within the `docker` folder.
+不要忘记重启 SillyTavern 的 Docker 容器以应用您的更改！请确保在 `docker` 文件夹内执行此命令。
 
 ```sh
 docker compose restart sillytavern
@@ -320,19 +320,19 @@ docker compose restart sillytavern
 
 !!!
 
-## Locating User Data
+## 定位用户数据
 
-SillyTavern's data folder will be within the `data` folder. Backing up your files should be easy to do, however, restoring or adding content into it may require you to do so with administrator rights.
+SillyTavern 的数据文件夹位于 `data` 文件夹中。备份文件应该很简单，但恢复或添加内容可能需要以管理员权限操作。
 
-## Running Server Plugins
+## 运行服务器插件
 
-Running plugins like [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS) or [SillyTavern-Fandom-Scraper](https://github.com/SillyTavern/SillyTavern-Fandom-Scraper) within Docker is no different from running it on your system without Docker, however we will need to do a slight modification to the Docker Compose script in order to do so.
+在 Docker 中运行插件（如 [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS) 或 [SillyTavern-Fandom-Scraper](https://github.com/SillyTavern/SillyTavern-Fandom-Scraper)）与不使用 Docker 在系统上运行没有区别，但我们需要对 Docker Compose 脚本进行轻微修改。
 
 !!! Note
-If you already see a _plugins_ folder within the `docker` folder, you can skip Steps 1-2.
+如果您已在 `docker` 文件夹中看到 _plugins_ 文件夹，可以跳过步骤 1-2。
 !!!
 
-1. Using `nano` or a code editor, open _docker-compose.yml_ and add the following line below `volumes`.
+1. 使用 `nano` 或代码编辑器，打开 _docker-compose.yml_，并在 `volumes` 下添加以下行。
 
     ```sh
         volumes:
@@ -341,18 +341,18 @@ If you already see a _plugins_ folder within the `docker` folder, you can skip S
             - "./plugins:/home/node/app/plugins"
     ```
 
-2. Create a new folder within the `docker` folder called _plugins_.
-3. Follow your plugin's instructions on installing the plugin.
-4. Using `nano` or a code editor with administrator rights, open _config.yaml_ (within the `config` folder) and enable `enableServerPlugins`
+2. 在 `docker` 文件夹内创建一个名为 _plugins_ 的新文件夹。
+3. 按照插件的安装说明安装插件。
+4. 使用以管理员权限运行的 `nano` 或代码编辑器，打开 `config` 文件夹中的 _config.yaml_，并启用 `enableServerPlugins`。
 
     ```sh
     enableServerPlugins: true
     ```
 
-5. Restart the Docker container.
+5. 重启 Docker 容器。
 
     ```sh
     docker compose restart sillytavern
     ```
 
-6. Profit.
+6. 搞定。

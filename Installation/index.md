@@ -4,18 +4,18 @@ icon: package
 expanded: true
 ---
 
-# Installation
+# 安装
 
-Follow the installation guide for your platform:
+请根据您的平台遵循安装指南：
 
 * [Windows](/Installation/Windows.md)
-* [Linux and Mac](/Installation/LinuxMacOS.md)
+* [Linux 和 Mac](/Installation/LinuxMacOS.md)
 * [Android](/Installation/Android.md)
 * [Docker](/Installation/Docker.md)
 
-## Branches
+## 分支
 
-SillyTavern is being developed using a two-branch system to ensure a smooth experience for all users.
+SillyTavern 采用双分支系统开发，以确保所有用户获得流畅的体验。
 
-* `release` -🌟 **Recommended for most users.** This is the most stable and recommended branch, updated only when major releases are pushed. It's suitable for the majority of users. Typically updated once a month.
-* `staging` - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. Updates several times daily.
+* `Release` - 🌟 **推荐大多数用户使用。** 这是最稳定且推荐的分支，仅在重大版本发布时更新。适合大多数用户。通常每月更新一次。
+* `staging` - ⚠️ **不推荐普通用户使用。** 此分支拥有最新功能，但需谨慎使用，因为它可能随时出现问题。仅适合高级用户和爱好者。每天更新多次。

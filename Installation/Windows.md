@@ -2,65 +2,65 @@
 order: 10
 label: Windows
 ---
-# Windows Installation
+# Windows 安装
 
 !!!warning
-DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).
+请勿安装到任何受 Windows 控制的文件夹（例如 Program Files、System32 等）。
 
-DO NOT RUN START.BAT WITH ADMIN PERMISSIONS
+请勿以管理员权限运行 START.BAT
 
-INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CAN NOT RUN NODEJS 18.16
+Windows 7 无法安装，因为它无法运行 NodeJS 18.16
 !!!
 
-## Installing via Git
+## 通过 Git 安装
 
-1. Install [NodeJS](https://nodejs.org/en) (latest LTS version is recommended)
-2. Install [Git for Windows](https://gitforwindows.org/)
-3. Open Windows Explorer (`Win+E`)
-4. Browse to or Create a folder that is not controlled or monitored by Windows. (ex: C:\MySpecialFolder\)
-5. Open a Command Prompt inside that folder by clicking in the 'Address Bar' at the top, typing `cmd`, and pressing Enter.
-6. Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:
+1. 安装 [NodeJS](https://nodejs.org/en)（推荐使用最新的 LTS 版本）
+2. 安装 [Git for Windows](https://gitforwindows.org/)
+3. 打开 Windows 资源管理器（`Win+E`）
+4. 浏览或创建一个不受 Windows 控制或监控的文件夹。（例如：C:\MySpecialFolder\）
+5. 在该文件夹内打开命令提示符，方法是点击顶部“地址栏”，输入 `cmd`，然后按 Enter 键。
+6. 当黑色框（命令提示符）弹出后，输入以下之一并按 Enter 键：
 
-   - for Release Branch: `git clone https://github.com/SillyTavern/SillyTavern -b release`
-   - for Staging Branch: `git clone https://github.com/SillyTavern/SillyTavern -b staging`
+   - 对于 Release 分支：`git clone https://github.com/SillyTavern/SillyTavern -b release`
+   - 对于 Staging 分支：`git clone https://github.com/SillyTavern/SillyTavern -b staging`
 
-7. Once everything is cloned, double-click `Start.bat` to make NodeJS install its requirements.
-8. The server will then start, and SillyTavern will pop up in your browser.
+7. 克隆完成后，双击 `Start.bat` 以让 NodeJS 安装其所需依赖。
+8. 然后服务器将启动，SillyTavern 将在您的浏览器中弹出。
 
-## Installing via SillyTavern Launcher
+## 通过 SillyTavern Launcher 安装
 
-1.  On your keyboard: press **`WINDOWS + R`** to open Run dialog box. Then, run the following command to install git:
+1. 在键盘上：按 **`WINDOWS + R`** 打开“运行”对话框。然后，运行以下命令以安装 Git：
     ```shell
     cmd /c winget install -e --id Git.Git
     ```
-2. On your keyboard: press **`WINDOWS + E`** to open File Explorer, then navigate to the folder where you want to install the launcher. Once in the desired folder, type `cmd` into the address bar and press enter. Then, run the following command: 
+2. 在键盘上：按 **`WINDOWS + E`** 打开文件资源管理器，然后导航到您想要安装启动器的文件夹。进入目标文件夹后，在地址栏中输入 `cmd` 并按 Enter 键。然后，运行以下命令：
    ```shell
     git clone https://github.com/SillyTavern/SillyTavern-Launcher.git && cd SillyTavern-Launcher && start installer.bat
     ```
 
-## Installing via GitHub Desktop
-(This allows git usage **only** in GitHub Desktop, if you want to use `git` on the command line too, you also need to install [Git for Windows](https://gitforwindows.org/))
+## 通过 GitHub Desktop 安装
+（此方法仅允许在 GitHub Desktop 中使用 Git，如果您还想在命令行中使用 `git`，则需额外安装 [Git for Windows](https://gitforwindows.org/)）
 
-1. Install [NodeJS](https://nodejs.org/en) (latest LTS version is recommended)
-2. Install [GitHub Desktop](https://central.github.com/deployments/desktop/desktop/latest/win32)
-3. After installing GitHub Desktop, click on `Clone a repository from the internet....` (Note: You **do NOT need** to create a GitHub account for this step)
+1. 安装 [NodeJS](https://nodejs.org/en)（推荐使用最新的 LTS 版本）
+2. 安装 [GitHub Desktop](https://central.github.com/deployments/desktop/desktop/latest/win32)
+3. 安装 GitHub Desktop 后，点击 `Clone a repository from the internet....`（注意：此步骤**无需**创建 GitHub 账户）
   
     ![image](/static/windows-1.png)
 
-4. On the menu, click the URL tab, enter this URL `https://github.com/SillyTavern/SillyTavern`, and click Clone. You can change the Local path to change where SillyTavern is going to be downloaded.
+4. 在菜单中，点击 URL 选项卡，输入此 URL `https://github.com/SillyTavern/SillyTavern`，然后点击 Clone。您可以更改本地路径以选择 SillyTavern 的下载位置。
 
     ![image](/static/windows-2.png)
 
-5. To open SillyTavern, use Windows Explorer to browse into the folder where you cloned the repository. By default, the repository will be cloned here: `C:\Users\[Your Windows Username]\Documents\GitHub\SillyTavern`
+5. 要打开 SillyTavern，使用 Windows 资源管理器浏览到您克隆仓库的文件夹。默认情况下，仓库将被克隆到此处：`C:\Users\[您的 Windows 用户名]\Documents\GitHub\SillyTavern`
   
-6. Double-click on the `start.bat` file. (Note: the `.bat` part of the file name might be hidden by your OS, in that case, it will look like a file called "`Start`". This is what you double-click to run SillyTavern)
+6. 双击 `start.bat` 文件。（注意：文件名中的 `.bat` 部分可能被您的操作系统隐藏，在这种情况下，它看起来像一个名为“`Start`”的文件。这是您需要双击运行 SillyTavern 的文件）
 
     ![image](/static/windows-3.png)
 
-7. After double-clicking, a large black command console window should open and SillyTavern will begin to install what it needs to operate.
+7. 双击后，一个大的黑色命令控制台窗口应会打开，SillyTavern 将开始安装其运行所需的内容。
   
-8. After the installation process, if everything is working, the command console window should look like this and a SillyTavern tab should be open in your browser:
+8. 安装过程完成后，如果一切正常，命令控制台窗口应如下所示，并且您的浏览器中应打开一个 SillyTavern 标签：
 
     ![image](/static/windows-4.png)
 
-9. Connect to any of the [supported APIs](/Usage/API_Connections/index.md) and start chatting!
+9. 连接到任何[支持的 API](/Usage/API_Connections/index.md)，即可开始聊天！

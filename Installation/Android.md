@@ -3,21 +3,21 @@ label: Android (Termux)
 route: /installation/android-(termux)/
 ---
 
-# Android (Termux) Installation
+# Android (Termux) 安装
 
-SillyTavern can be run natively on Android phones using Termux.
+SillyTavern 可以通过 Termux 在 Android 手机上原生运行。
 
-Please refer to this guide by ArroganceComplex#2659:
+请参考 ArroganceComplex#2659 提供的指南：
 
 <https://rentry.org/STAI-Termux>
 
-## Common errors
+## 常见错误
 
-### Unsupported platform: android arm LEtime-web
-32-bit Android requires an external dependency that can't be installed with npm.
+### 不支持的平台：android arm LEtime-web
+32位 Android 需要一个无法通过 npm 安装的外部依赖。
 
-Use the following command to install it:
+使用以下命令安装它：
 
 `pkg install esbuild`
 
-Then run the steps from the guide.
+然后按照指南中的步骤操作。
