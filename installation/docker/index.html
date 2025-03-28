@@ -6,15 +6,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796483601888">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796485085610">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Docker Installation | docs.ST.app</title>
-    <meta name="title" content="Docker Installation | docs.ST.app">
-    <meta name="description" content="This guide assumes you installed SillyTavern in a non-root (non-admin) folder.">
+    <title>Docker 安装 | docs.ST.app</title>
+    <meta name="title" content="Docker 安装 | docs.ST.app">
+    <meta name="description" content="本指南假设您将 SillyTavern 安装在非根（非管理员）文件夹中。如果您将 SillyTavern 安装在根文件夹中，可能需要以管理员权限运行部分命令（例如 sudo、 doas 或以管理员身份运行命令提示符）。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/installation/docker/">
@@ -22,23 +22,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/installation/docker/">
-    <meta property="og:title" content="Docker Installation | docs.ST.app">
-    <meta property="og:description" content="This guide assumes you installed SillyTavern in a non-root (non-admin) folder.">
+    <meta property="og:title" content="Docker 安装 | docs.ST.app">
+    <meta property="og:description" content="本指南假设您将 SillyTavern 安装在非根（非管理员）文件夹中。如果您将 SillyTavern 安装在根文件夹中，可能需要以管理员权限运行部分命令（例如 sudo、 doas 或以管理员身份运行命令提示符）。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/installation/docker/">
-    <meta property="twitter:title" content="Docker Installation | docs.ST.app">
-    <meta property="twitter:description" content="This guide assumes you installed SillyTavern in a non-root (non-admin) folder.">
+    <meta property="twitter:title" content="Docker 安装 | docs.ST.app">
+    <meta property="twitter:description" content="本指南假设您将 SillyTavern 安装在非根（非管理员）文件夹中。如果您将 SillyTavern 安装在根文件夹中，可能需要以管理员权限运行部分命令（例如 sudo、 doas 或以管理员身份运行命令提示符）。">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.796483601888" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.796485085610" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796483601888" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796485085610" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796483601888" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796483601888" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796485085610" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796485085610" defer></script>
 
     <style>
         a {
@@ -228,10 +228,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="docker-installation" class="break-words">
+<doc-anchor-target id="docker-安装" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-installation">#</doc-anchor-trigger>
-        <span>Docker Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-安装">#</doc-anchor-trigger>
+        <span>Docker 安装</span>
     </h1>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -247,14 +247,14 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This guide assumes you installed SillyTavern in a non-root (non-admin) folder. If you installed SillyTavern in a root folder, you may have to run some of these commands with administrator rights [<code v-pre>sudo</code>, <code v-pre>doas</code>, Command Prompt (Administrator)].</p>
+<p>本指南假设您将 SillyTavern 安装在非根（非管理员）文件夹中。如果您将 SillyTavern 安装在根文件夹中，可能需要以管理员权限运行部分命令（例如 <code v-pre>sudo</code>、<code v-pre>doas</code> 或以管理员身份运行命令提示符）。</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="installation">
+<doc-anchor-target id="安装">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
-        <span>Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#安装">#</doc-anchor-trigger>
+        <span>安装</span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="linux">
@@ -264,7 +264,7 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li><p>Install Docker by following the Docker installation guide <a href="https://docs.docker.com/engine/install/">here</a>.</p>
+<li><p>按照 Docker 安装指南 <a href="https://docs.docker.com/engine/install/">此处</a> 安装 Docker。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -277,56 +277,56 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p><strong>Do not</strong> install Docker Desktop.</p>
+<p><strong>不要</strong> 安装 Docker Desktop。</p>
         </div>
     </div>
 </div>
 </li>
-<li><p>Follow the steps in <strong>Manage Docker as a non-root user</strong> in the Docker <a href="https://docs.docker.com/engine/install/linux-postinstall/">Post-Installation Guide</a>.</p>
+<li><p>按照 Docker <a href="https://docs.docker.com/engine/install/linux-postinstall/">安装后指南</a> 中的 <strong>以非根用户管理 Docker</strong> 步骤操作。</p>
 </li>
-<li><p>Install <a href="https://git-scm.com/download/linux">Git</a> using your package manager.</p>
+<li><p>使用您的包管理器安装 <a href="https://git-scm.com/download/linux">Git</a>。</p>
 <ul>
-<li><p>Debian (Ubuntu/Pop! OS/etc.)</p>
+<li><p>Debian (Ubuntu/Pop! OS 等)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo apt install git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Arch Linux (Manjaro/EndeavourOS/etc.)</p>
+<li><p>Arch Linux (Manjaro/EndeavourOS 等)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo pacman -S git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Fedora, Red Hat Enterprise Linux (RHEL), etc.</p>
+<li><p>Fedora, Red Hat Enterprise Linux (RHEL) 等</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo dnf install git</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>Clone the SillyTavern repository.</p>
+<li><p>克隆 SillyTavern 仓库。</p>
 <ul>
-<li><p>Release (Stable Branch)</p>
+<li><p>Release (稳定分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (Development Branch)</p>
+<li><p>Staging (开发分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>Execute <code v-pre>docker compose</code> by running the following command within the Docker folder.</p>
+<li><p>在 Docker 文件夹内运行以下命令执行 <code v-pre>docker compose</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
+<li><p>执行以下 Docker 命令以获取 SillyTavern Docker 容器的 IP。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
 </doc-codeblock></div>
-<p>You should receive some sort of output similar to the following below.</p>
+<p>您应该会看到类似于以下内容的输出。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-json"><code v-pre class="language-json">[
     {
@@ -342,24 +342,24 @@
     }
 ]</code></pre>
 </doc-codeblock></div>
-<p>Copy down the IP you see in <em>Gateway</em> as this will be important.</p>
+<p>记下 <em>Gateway</em> 中显示的 IP，这将很重要。</p>
 </li>
-<li><p>Using <code v-pre>sudo</code>, open <code v-pre>nano</code> and run the following command.</p>
+<li><p>使用 <code v-pre>sudo</code> 打开 <code v-pre>nano</code>，并运行以下命令。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo nano config/config.yaml</code></pre>
 </doc-codeblock></div>
-<p>Within <code v-pre>nano</code>, go down to <code v-pre>whitelist</code>. You should see something similar to the following below.</p>
+<p>在 <code v-pre>nano</code> 中，找到 <code v-pre>whitelist</code>。您应该会看到类似于以下内容。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
     - 127.0.0.1</code></pre>
 </doc-codeblock></div>
-<p>Add a new line below <em>127.0.0.1</em> and put in the IP you copied from Docker. It should look something similar to the following afterwards.</p>
+<p>在 <em>127.0.0.1</em> 下方添加一行，输入您从 Docker 复制的 IP。完成后应类似于以下内容。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
     - 127.0.0.1
     - 172.18.0.1</code></pre>
 </doc-codeblock></div>
-<p>Save the file by pressing <em>Ctrl+S</em> then exit <code v-pre>nano</code> by pressing <em>Ctrl+X</em>.</p>
+<p>按 <em>Ctrl+S</em> 保存文件，然后按 <em>Ctrl+X</em> 退出 <code v-pre>nano</code>。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -373,19 +373,19 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.</p>
+<p>请注意，如果您将 Docker 网络配置为桥接模式，您也可以照常将外部 IP 地址添加到白名单。</p>
         </div>
     </div>
 </div>
 </li>
-<li><p>Restart the Docker Container to apply the new configuration.</p>
+<li><p>重启 Docker 容器以应用新配置。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Open an new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</p>
+<li><p>打开一个新浏览器，访问 <a href="http://localhost:8000">http://localhost:8000</a>。几秒钟后，您应该会看到 SillyTavern 加载完成。</p>
 </li>
-<li><p>Enjoy! :D</p>
+<li><p>尽情享受吧！ :D</p>
 </li>
 </ol>
 <doc-anchor-target id="windows">
@@ -406,41 +406,41 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Regarding Docker on Windows</h5>
-<p>Using Docker on Windows is <strong><em>really</em></strong> complicated. Not only do you need to activate <em>Windows Subsystem for Linux</em> within <em>Turn Windows features on or off</em>, but also configure your system for Virtualization (Intel VT-d/AMD SVM) which differs from PC manufacturer to PC manufacturer (or motherboard manufacturer). Sometimes, this option is not present on some systems.</p>
-<p>It is highly suggested you install SillyTavern by following our <a href="../windows/">Windows</a> guide. This section is a <em>rough</em> idea of how it can be done on Windows.</p>
+            <h5>关于在 Windows 上使用 Docker</h5>
+<p>在 Windows 上使用 Docker <strong>非常</strong> 复杂。您不仅需要在“启用或关闭 Windows 功能”中激活 <em>Windows 子系统 Linux</em>，还需要为您的系统配置虚拟化（Intel VT-d/AMD SVM），而这因 PC 制造商或主板制造商而异。有时，某些系统上可能没有此选项。</p>
+<p>强烈建议您按照我们的 <a href="../windows/">Windows</a> 指南安装 SillyTavern。本节仅提供在 Windows 上实现的大致思路。</p>
         </div>
     </div>
 </div>
 <ol>
-<li><p>Install Docker Desktop by following the Docker installation guide <a href="https://docs.docker.com/desktop/setup/install/windows-install/">here</a>.</p>
+<li><p>按照 Docker 安装指南 <a href="https://docs.docker.com/desktop/setup/install/windows-install/">此处</a> 安装 Docker Desktop。</p>
 </li>
-<li><p>Install <a href="https://git-scm.com/download/win">Git for Windows</a>.</p>
+<li><p>安装 <a href="https://git-scm.com/download/win">Git for Windows</a>。</p>
 </li>
-<li><p>Clone the SillyTavern repository.</p>
+<li><p>克隆 SillyTavern 仓库。</p>
 <ul>
-<li><p>Release (Stable Branch)</p>
+<li><p>Release (稳定分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (Development Branch)</p>
+<li><p>Staging (开发分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>Execute <code v-pre>docker compose</code> by running the following command within the Docker folder.</p>
+<li><p>在 Docker 文件夹内运行以下命令执行 <code v-pre>docker compose</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
+<li><p>执行以下 Docker 命令以获取 SillyTavern Docker 容器的 IP。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
 </doc-codeblock></div>
-<p>You should receive some sort of output similar to the following below.</p>
+<p>您应该会看到类似于以下内容的输出。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-json"><code v-pre class="language-json">[
     {
@@ -456,21 +456,21 @@
     }
 ]</code></pre>
 </doc-codeblock></div>
-<p>Copy down the IP you see in <em>Gateway</em> as this will be important.</p>
+<p>记下 <em>Gateway</em> 中显示的 IP，这将很重要。</p>
 </li>
-<li><p>Running <em>Notepad</em> or a code editor of your choice with administrator rights, go to <code v-pre>config</code> and open <em>config.yaml</em>.</p>
-<p>Within the editor of your choice, you should see something similar to the following below.</p>
+<li><p>以管理员权限运行 <em>记事本</em> 或您选择的代码编辑器，进入 <code v-pre>config</code> 文件夹并打开 <em>config.yaml</em>。</p>
+<p>在您选择的编辑器中，您应该会看到类似于以下内容。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
     - 127.0.0.1</code></pre>
 </doc-codeblock></div>
-<p>Add a new line below <em>127.0.0.1</em> and put in the IP you copied from Docker. It should look something similar to the following afterwards.</p>
+<p>在 <em>127.0.0.1</em> 下方添加一行，输入您从 Docker 复制的 IP。完成后应类似于以下内容。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
     - 127.0.0.1
     - 172.18.0.1</code></pre>
 </doc-codeblock></div>
-<p>Save the file by pressing <em>Ctrl+S</em> then exit your editor.</p>
+<p>按 <em>Ctrl+S</em> 保存文件，然后退出编辑器。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -484,19 +484,19 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.</p>
+<p>请注意，如果您将 Docker 网络配置为桥接模式，您也可以照常将外部 IP 地址添加到白名单。</p>
         </div>
     </div>
 </div>
 </li>
-<li><p>Restart the Docker Container to apply the new configuration.</p>
+<li><p>重启 Docker 容器以应用新配置。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Open an new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</p>
+<li><p>打开一个新浏览器，访问 <a href="http://localhost:8000">http://localhost:8000</a>。几秒钟后，您应该会看到 SillyTavern 加载完成。</p>
 </li>
-<li><p>Enjoy! :D</p>
+<li><p>尽情享受吧！ :D</p>
 </li>
 </ol>
 <doc-anchor-target id="macos">
@@ -518,43 +518,43 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Even though macOS is similar to Linux, it doesn&#x27;t have the Docker Engine. You will have to install Docker Desktop similarly to Windows.
-You will also need to install <a href="https://brew.sh/">Homebrew</a> in order to install Git on your Mac. This section is a <em>rough</em> idea on how it can be done on macOS.</p>
+<p>尽管 macOS 与 Linux 相似，但它没有 Docker Engine。您需要像 Windows 一样安装 Docker Desktop。
+您还需要安装 <a href="https://brew.sh/">Homebrew</a> 以在 Mac 上安装 Git。本节仅提供在 macOS 上实现的大致思路。</p>
         </div>
     </div>
 </div>
 <ol>
-<li><p>Install Docker Desktop by following the Docker installation guide <a href="https://docs.docker.com/desktop/setup/install/mac-install/">here</a>.</p>
+<li><p>按照 Docker 安装指南 <a href="https://docs.docker.com/desktop/setup/install/mac-install/">此处</a> 安装 Docker Desktop。</p>
 </li>
-<li><p>Install <code v-pre>git</code> using Homebrew.</p>
+<li><p>使用 Homebrew 安装 <code v-pre>git</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">brew install git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Clone the SillyTavern repository.</p>
+<li><p>克隆 SillyTavern 仓库。</p>
 <ul>
-<li><p>Release (Stable Branch)</p>
+<li><p>Release (稳定分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (Development Branch)</p>
+<li><p>Staging (开发分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>Execute <code v-pre>docker compose</code> by running the following command within the Docker folder.</p>
+<li><p>在 Docker 文件夹内运行以下命令执行 <code v-pre>docker compose</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
+<li><p>执行以下 Docker 命令以获取 SillyTavern Docker 容器的 IP。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
 </doc-codeblock></div>
-<p>You should recieve some sort of output similar to the following below.</p>
+<p>您应该会看到类似于以下内容的输出。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-json"><code v-pre class="language-json">[
     {
@@ -570,9 +570,9 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
     }
 ]</code></pre>
 </doc-codeblock></div>
-<p>Copy down the IP you see in <em>Gateway</em> as this will be important.</p>
+<p>记下 <em>Gateway</em> 中显示的 IP，这将很重要。</p>
 </li>
-<li><p>Using <code v-pre>sudo</code>, open <code v-pre>nano</code> and run the following command.</p>
+<li><p>使用 <code v-pre>sudo</code> 打开 <code v-pre>nano</code>，并运行以下命令。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo nano config/config.yaml</code></pre>
 </doc-codeblock></div>
@@ -589,22 +589,22 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>If you can&#x27;t run <code v-pre>nano</code>, either install it via Homebrew or use TextEdit.</p>
+<p>如果您无法运行 <code v-pre>nano</code>，可以通过 Homebrew 安装它，或使用 TextEdit。</p>
         </div>
     </div>
 </div>
-<p>Within <code v-pre>nano</code>, go down to <code v-pre>whitelist</code>. You should see something similar to the following below.</p>
+<p>在 <code v-pre>nano</code> 中，找到 <code v-pre>whitelist</code>。您应该会看到类似于以下内容。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
     - 127.0.0.1</code></pre>
 </doc-codeblock></div>
-<p>Add a new line below <em>127.0.0.1</em> and put in the IP you copied from Docker. It should look something similar to the following afterwards.</p>
+<p>在 <em>127.0.0.1</em> 下方添加一行，输入您从 Docker 复制的 IP。完成后应类似于以下内容。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
     - 127.0.0.1
     - 172.18.0.1</code></pre>
 </doc-codeblock></div>
-<p>Save the file by pressing <em>Ctrl+S</em> then exit <code v-pre>nano</code> by pressing <em>Ctrl+X</em>.</p>
+<p>按 <em>Ctrl+S</em> 保存文件，然后按 <em>Ctrl+X</em> 退出 <code v-pre>nano</code>。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -618,28 +618,28 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.</p>
+<p>请注意，如果您将 Docker 网络配置为桥接模式，您也可以照常将外部 IP 地址添加到白名单。</p>
         </div>
     </div>
 </div>
 </li>
-<li><p>Restart the Docker Container to apply the new configuration.</p>
+<li><p>重启 Docker 容器以应用新配置。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Open an new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</p>
+<li><p>打开一个新浏览器，访问 <a href="http://localhost:8000">http://localhost:8000</a>。几秒钟后，您应该会看到 SillyTavern 加载完成。</p>
 </li>
-<li><p>Enjoy! :D</p>
+<li><p>尽情享受吧！ :D</p>
 </li>
 </ol>
-<doc-anchor-target id="configuring-sillytavern">
+<doc-anchor-target id="配置-sillytavern">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-sillytavern">#</doc-anchor-trigger>
-        <span>Configuring SillyTavern</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#配置-sillytavern">#</doc-anchor-trigger>
+        <span>配置 SillyTavern</span>
     </h2>
 </doc-anchor-target>
-<p>SillyTavern&#x27;s configuration file (config.yaml) will be located within the <code v-pre>config</code> folder. Configuring the config file should be no different than configuring it without Docker, however you will need to run <code v-pre>nano</code> or a code editor with administrator rights in order to save your changes.</p>
+<p>SillyTavern 的配置文件 (config.yaml) 位于 <code v-pre>config</code> 文件夹中。配置此文件与不使用 Docker 的情况没有区别，但您需要以管理员权限运行 <code v-pre>nano</code> 或代码编辑器才能保存更改。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -652,27 +652,27 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Don&#x27;t forget to restart the Docker container for SillyTavern in order to apply your changes! Make sure you execute this command within the <code v-pre>docker</code> folder.</p>
+<p>不要忘记重启 SillyTavern 的 Docker 容器以应用您的更改！请确保在 <code v-pre>docker</code> 文件夹内执行此命令。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
         </div>
     </div>
 </div>
-<doc-anchor-target id="locating-user-data">
+<doc-anchor-target id="定位用户数据">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#locating-user-data">#</doc-anchor-trigger>
-        <span>Locating User Data</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#定位用户数据">#</doc-anchor-trigger>
+        <span>定位用户数据</span>
     </h2>
 </doc-anchor-target>
-<p>SillyTavern&#x27;s data folder will be within the <code v-pre>data</code> folder. Backing up your files should be easy to do, however, restoring or adding content into it may require you to do so with administrator rights.</p>
-<doc-anchor-target id="running-server-plugins">
+<p>SillyTavern 的数据文件夹位于 <code v-pre>data</code> 文件夹中。备份文件应该很简单，但恢复或添加内容可能需要以管理员权限操作。</p>
+<doc-anchor-target id="运行服务器插件">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#running-server-plugins">#</doc-anchor-trigger>
-        <span>Running Server Plugins</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#运行服务器插件">#</doc-anchor-trigger>
+        <span>运行服务器插件</span>
     </h2>
 </doc-anchor-target>
-<p>Running plugins like <a href="https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS">HoYoWiki-Scraper-TS</a> or <a href="https://github.com/SillyTavern/SillyTavern-Fandom-Scraper">SillyTavern-Fandom-Scraper</a> within Docker is no different from running it on your system without Docker, however we will need to do a slight modification to the Docker Compose script in order to do so.</p>
+<p>在 Docker 中运行插件（如 <a href="https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS">HoYoWiki-Scraper-TS</a> 或 <a href="https://github.com/SillyTavern/SillyTavern-Fandom-Scraper">SillyTavern-Fandom-Scraper</a>）与不使用 Docker 在系统上运行没有区别，但我们需要对 Docker Compose 脚本进行轻微修改。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -687,12 +687,12 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Note</h5>
-<p>If you already see a <em>plugins</em> folder within the <code v-pre>docker</code> folder, you can skip Steps 1-2.</p>
+<p>如果您已在 <code v-pre>docker</code> 文件夹中看到 <em>plugins</em> 文件夹，可以跳过步骤 1-2。</p>
         </div>
     </div>
 </div>
 <ol>
-<li><p>Using <code v-pre>nano</code> or a code editor, open <em>docker-compose.yml</em> and add the following line below <code v-pre>volumes</code>.</p>
+<li><p>使用 <code v-pre>nano</code> 或代码编辑器，打开 <em>docker-compose.yml</em>，并在 <code v-pre>volumes</code> 下添加以下行。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">    volumes:
         - &quot;./config:/home/node/app/config&quot;
@@ -700,21 +700,21 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
         - &quot;./plugins:/home/node/app/plugins&quot;</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Create a new folder within the <code v-pre>docker</code> folder called <em>plugins</em>.</p>
+<li><p>在 <code v-pre>docker</code> 文件夹内创建一个名为 <em>plugins</em> 的新文件夹。</p>
 </li>
-<li><p>Follow your plugin&#x27;s instructions on installing the plugin.</p>
+<li><p>按照插件的安装说明安装插件。</p>
 </li>
-<li><p>Using <code v-pre>nano</code> or a code editor with administrator rights, open <em>config.yaml</em> (within the <code v-pre>config</code> folder) and enable <code v-pre>enableServerPlugins</code></p>
+<li><p>使用以管理员权限运行的 <code v-pre>nano</code> 或代码编辑器，打开 <code v-pre>config</code> 文件夹中的 <em>config.yaml</em>，并启用 <code v-pre>enableServerPlugins</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">enableServerPlugins: true</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Restart the Docker container.</p>
+<li><p>重启 Docker 容器。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Profit.</p>
+<li><p>搞定。</p>
 </li>
 </ol>
 
@@ -745,7 +745,7 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../installation/updating/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Updating</span>
+                                                <span class="block mt-1">更新</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
