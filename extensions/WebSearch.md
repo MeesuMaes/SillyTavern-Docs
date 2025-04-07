@@ -1,168 +1,168 @@
-# Web Search
+# 网络搜索
 
-Adds web search results to LLM prompts.
+将网络搜索结果添加到LLM提示中。
 
-## Available sources
+## 可用来源
 
-### Selenium Plugin
+### Selenium插件
 
-Requires an official server plugin to be installed and enabled.
+需要安装并启用官方服务器插件。
 
-See [SillyTavern-WebSearch-Selenium](https://github.com/SillyTavern/SillyTavern-WebSearch-Selenium) for more details.
+详情见 [SillyTavern-WebSearch-Selenium](https://github.com/SillyTavern/SillyTavern-WebSearch-Selenium)。
 
-Supports Google and DuckDuckGo engines.
+支持Google和DuckDuckGo引擎。
 
 ### Extras API
 
-Requires a `websearch` module and Chrome/Firefox web browser installed on the host machine.
+需要在主机上安装`websearch`模块和Chrome/Firefox网络浏览器。
 
-Supports Google and DuckDuckGo engines.
+支持Google和DuckDuckGo引擎。
 
 ### SerpApi
 
-Requires an API key.
+需要API密钥。
 
-Get the key here: <https://serpapi.com/dashboard>
+在此获取密钥：<https://serpapi.com/dashboard>
 
 ### SearXNG
 
-Requires a SearXNG instance URL (either private or public). Uses HTML format for search results.
+需要SearXNG实例URL（可以是私有或公开的）。使用HTML格式返回搜索结果。
 
-SearXNG preferences string: obtained from SearXNG - preferences - COOKIES - Copy preferences hash
+SearXNG偏好设置字符串：从SearXNG - 偏好设置 - COOKIES - 复制偏好哈希值中获取
 
-Learn more: <https://docs.searxng.org/>
+了解更多：<https://docs.searxng.org/>
 
 ### Tavily AI
 
-Requires an API key.
+需要API密钥。
 
-Get the key here: <https://app.tavily.com/>
+在此获取密钥：<https://app.tavily.com/>
 
 ### KoboldCpp
 
-KoboldCpp URL must be provided in Text Completion API settings. KoboldCpp version must be >= 1.81.1 and WebSearch module must be enabled on startup: enable Network => Enable WebSearch in the GUI launcher or add `--websearch` to the command line.
+必须在文本完成API设置中提供KoboldCpp URL。KoboldCpp版本必须为>= 1.81.1，并且在启动时必须启用WebSearch模块：在GUI启动器中启用网络 => 启用WebSearch，或在命令行中添加`--websearch`。
 
-See: <https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1>
+详情见：<https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1>
 
 ### Serper
 
-Requires an API key.
+需要API密钥。
 
-Get the key here: <https://serper.dev/>
+在此获取密钥：<https://serper.dev/>
 
-## How to use
+## 如何使用
 
-1. Make sure you use the latest version of SillyTavern.
-2. Install the extension via the "Download Extensions & Assets" menu in SillyTavern.
-3. Open the "Web Search" extension settings, set your API key or connect to Extras, and enable the extension.
-4. The web search results will be added to the prompt organically as you chat. **Only user messages trigger the search.**
-5. To include search results more organically, wrap search queries with single backticks: ```Tell me about the `latest Ryan Gosling movie`.``` will produce a search query `latest Ryan Gosling movie`.
-6. Optionally, configure the settings to your liking.
+1. 确保使用最新版本的SillyTavern。
+2. 通过SillyTavern中的“下载扩展和资产”菜单安装扩展。
+3. 打开“网络搜索”扩展设置，设置您的API密钥或连接到Extras，并启用扩展。
+4. 在您聊天时，网络搜索结果将有机地添加到提示中。**只有用户消息会触发搜索。**
+5. 要更自然地包含搜索结果，请使用单反引号包裹搜索查询：```告诉我关于`最新的瑞恩·高斯林电影`。``` 将生成搜索查询`最新的瑞恩·高斯林电影`。
+6. 可选地，根据您的喜好配置设置。
 
-## Settings
+## 设置
 
-### General
+### 常规
 
-1. Enabled - toggles the extension on and off.
-2. Sources = sets the search results source.
-3. Cache Lifetime - how long (in seconds) the search results are cached for your prompt. Default = one week.
+1. 启用 - 开关扩展。
+2. 来源 = 设置搜索结果来源。
+3. 缓存寿命 - 搜索结果在您的提示中缓存的时间（以秒为单位）。默认 = 一周。
 
-### Prompt Settings
+### 提示设置
 
-1. Prompt Budget - sets the maximum capacity of the inserted text (in characters of text, NOT tokens). Rule of thumb: 1 token ~ 3-4 characters, adjust according to your model's context limits. Default = 1500 characters.
-2. Insertion Template - how the result gets inserted into the prompt. Supports the usual macro + special macro: \{\{query\}\} for search query and \{\{text\}\} for search results.
-3. Injection Position - where the result goes in the prompt. The same options as for the Author's Note: as in-chat injection or before/after system prompt.
+1. 提示预算 - 设置插入文本的最大容量（以文本字符计，不是令牌）。经验法则是：1个令牌约3-4个字符，根据您的模型上下文限制进行调整。默认 = 1500个字符。
+2. 插入模板 - 结果如何插入提示。支持常用宏 + 特殊宏：\{\{query\}\} 表示搜索查询，\{\{text\}\} 表示搜索结果。
+3. 注入位置 - 结果在提示中的位置。与作者注释相同选项：作为聊天注入或在系统提示之前/之后。
 
-### Search Activation
+### 搜索激活
 
-1. Use function tool - uses [function calling](/For_Contributors/Function-Calling.md) to activate search or scrape web pages. Must use a supported Chat Completion API and be enabled in the AI Response settings. **Disables all other activation methods when engaged.**
-2. Use Backticks - enables search activation using words encased in single backticks.
-3. Use Trigger Phrases - enables search activation using trigger phrases.
-4. Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports `{{macros}}` and $1-syntax to reference the matched group. Example: `/what is happening in (.*)/i` regex for search query `news in $1` will match a message containing `what is happening in New York` and trigger the search with the query `news in New York`.
-5. Trigger Phrases - add phrases that will trigger the search, one by one. It can be anywhere in the message, and the query starts from the trigger word and spans to "Max Words" total. To exclude a specific message from processing, it must start with a period, e.g. `.What do you think?`. Priority of triggers: first by order in the textbox, then the first one in the user message.
-6. Max Words - how many words are included in the search query (including the trigger phrase). Google has a limit of about 32 words per prompt. Default = 10 words.
+1. 使用功能工具 - 使用[功能调用](/For_Contributors/Function-Calling.md)激活搜索或抓取网页。必须使用支持的聊天完成API并在AI响应设置中启用。**启用时禁用所有其他激活方法。**
+2. 使用反引号 - 启用使用单反引号包裹的词触发搜索。
+3. 使用触发短语 - 启用使用触发短语激活搜索。
+4. 正则表达式 - 提供JS风格的正则表达式以匹配用户消息。如果正则表达式匹配，将触发给定查询的搜索。搜索查询支持`{{macros}}`和$1语法来引用匹配的组。例如：`/what is happening in (.*)/i` 正则表达式用于搜索查询`news in $1`，将匹配包含`what is happening in New York`的消息，并触发查询`news in New York`的搜索。
+5. 触发短语 - 逐一添加将触发搜索的短语。它可以出现在消息中的任何位置，查询从触发词开始，扩展到“最大词数”总数。要排除特定消息的处理，消息必须以句点开头，例如`.你觉得怎么样？`。触发优先级：首先按文本框中的顺序，然后是用户消息中的第一个。
+6. 最大词数 - 搜索查询中包含的单词数（包括触发短语）。Google对每个提示的限制约为32个词。默认 = 10个词。
 
-### Page Scraping
+### 页面抓取
 
-1. Visit Links - text will be extracted from the visited search result pages and saved to a file attachment.
-2. Visit Count - how many links will be visited and parsed for text.
-3. Visit Domain Blacklist - site domains to be excluded from visiting. One per line.
-4. File Header - file header template, inserted at the start of the text file, has an additional \{\{query\}\} macro.
-5. Block Header - link block template, inserted with the parsed content of every link. Use \{\{link\}\} macro for page URL and \{\{text\}\} for page content.
-6. Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank, or just images (if the source supports them).
-7. Include Images - attach relevant images to the chat. Requires a source that supports images (see below).
+1. 访问链接 - 将从访问的搜索结果页面提取文本并保存到文件附件。
+2. 访问次数 - 将访问并解析多少个链接的文本。
+3. 访问域名黑名单 - 要排除访问的网站域名。每行一个。
+4. 文件头 - 文件头模板，插入文本文件的开头，有额外的\{\{query\}\}宏。
+5. 块头 - 链接块模板，随每个链接的解析内容插入。使用\{\{link\}\}宏表示页面URL，\{\{text\}\}表示页面内容。
+6. 保存目标 - 保存抓取结果的位置。可选选项：触发消息附件，或数据银行的聊天附件，或仅图像（如果来源支持）。
+7. 包括图像 - 将相关图像附加到聊天中。需要支持图像的来源（见下文）。
 
-## More info
+## 更多信息
 
-Search results from the latest query will stay included in the prompt until the next valid query is found.
-If you want to ask additional questions without accidentally triggering the search, start your message with a period.
+来自最新查询的搜索结果将保留在提示中，直到找到下一个有效查询。
+如果您想提出额外问题而不意外触发搜索，请在消息开头使用句点。
 
 !!! info
-Web Search function tool always overrides other triggers if enabled and available.
+如果启用并可用，网络搜索功能工具始终覆盖其他触发器。
 !!!
 
-Priority of triggers (if multiple are enabled):
+触发优先级（如果启用了多个）：
 
-1. Backticks.
-2. Regular expressions.
-3. Trigger phrases.
+1. 反引号。
+2. 正则表达式。
+3. 触发短语。
 
-To discard all previous queries from processing, start the user message with an exclamation mark, for example, a user message `!Now let's talk about...` will discard this and every message above it.
+要丢弃所有之前的查询处理，请在用户消息开头使用感叹号，例如，用户消息`!现在让我们谈谈...`将丢弃此消息及其上面的所有消息。
 
-This extension also provides a `/websearch` slash command to use in STscript. More info here: [STscript Language Reference](/For_Contributors/st-script.md#extension-commands)
+此扩展还提供了一个`/websearch`斜杠命令，可在STscript中使用。更多信息见：[STscript语言参考](/For_Contributors/st-script.md#extension-commands)
 
 ```stscript
-/websearch (links=on|off snippets=on|off [query]) – performs a web search query. Use named arguments to specify what to return - page snippets (default: on), full parsed pages (default: off) or both.
+/websearch (links=on|off snippets=on|off [query]) – 执行网络搜索查询。使用命名参数指定返回内容 - 页面片段（默认：开启）、完整解析页面（默认：关闭）或两者兼有。
 
-Example: /websearch links=off snippets=on how to make a sandwich
+示例：/websearch links=off snippets=on 如何制作三明治
 ```
 
-### What can be included in the search result?
+### 搜索结果中可以包含什么？
 
-**Thesaurus:**
+**词典：**
 
-- Answer box: Direct answer to the question.
-- Knowledge graph: Encyclopedic knowledge about the topic.
-- Page snippets: Relevant extracts from the web pages.
-- Relevant questions: Questions and answers to similar topics.
-- Images: Relevant images.
+- 答案框：问题的直接答案。
+- 知识图谱：关于主题的百科知识。
+- 页面片段：网页的相关摘录。
+- 相关问题：类似主题的问题和答案。
+- 图像：相关图像。
 
 #### SerpApi
 
-1. Answer box.
-2. Knowledge graph.
-3. Page snippets (max 10).
-4. Relevant questions (max 10).
-5. Images (max 10).
+1. 答案框。
+2. 知识图谱。
+3. 页面片段（最多10个）。
+4. 相关问题（最多10个）。
+5. 图像（最多10个）。
 
-#### Selenium Plugin and Extras API
+#### Selenium插件和Extras API
 
-1. Google - answer box, knowledge graph, page snippets.
-2. DuckDuckGo - page snippets.
+1. Google - 答案框，知识图谱，页面片段。
+2. DuckDuckGo - 页面片段。
 
-**Selenium Plugin** can additionaly provide images.
+**Selenium插件**还可以额外提供图像。
 
 #### SearXNG
 
-1. Infobox.
-2. Page snippets.
-3. Images.
+1. 信息框。
+2. 页面片段。
+3. 图像。
 
 #### Tavily AI
 
-1. Answer.
-2. Page contents.
-3. Images (up to 5).
+1. 答案。
+2. 页面内容。
+3. 图像（最多5个）。
 
 #### KoboldCpp
 
-1. Page titles.
-2. Page snippets.
+1. 页面标题。
+2. 页面片段。
 
 #### Serper
 
-1. Answer box.
-2. Knowledge graph.
-3. Page snippets.
-4. Relevant questions.
-5. Images.
+1. 答案框。
+2. 知识图谱。
+3. 页面片段。
+4. 相关问题。
+5. 图像。
