@@ -6,15 +6,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796485085610">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797370924010">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Web Search | docs.ST.app</title>
-    <meta name="title" content="Web Search | docs.ST.app">
-    <meta name="description" content="Adds web search results to LLM prompts.">
+    <title>网络搜索 | docs.ST.app</title>
+    <meta name="title" content="网络搜索 | docs.ST.app">
+    <meta name="description" content="将网络搜索结果添加到LLM提示中。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/websearch/">
@@ -22,22 +22,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/websearch/">
-    <meta property="og:title" content="Web Search | docs.ST.app">
-    <meta property="og:description" content="Adds web search results to LLM prompts.">
+    <meta property="og:title" content="网络搜索 | docs.ST.app">
+    <meta property="og:description" content="将网络搜索结果添加到LLM提示中。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/websearch/">
-    <meta property="twitter:title" content="Web Search | docs.ST.app">
-    <meta property="twitter:description" content="Adds web search results to LLM prompts.">
+    <meta property="twitter:title" content="网络搜索 | docs.ST.app">
+    <meta property="twitter:description" content="将网络搜索结果添加到LLM提示中。">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.796485085610" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797370924010" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796485085610" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797370924010" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796485085610" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797370924010" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -227,156 +227,156 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="web-search" class="break-words">
+<doc-anchor-target id="网络搜索" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#web-search">#</doc-anchor-trigger>
-        <span>Web Search</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#网络搜索">#</doc-anchor-trigger>
+        <span>网络搜索</span>
     </h1>
 </doc-anchor-target>
-<p>Adds web search results to LLM prompts.</p>
-<doc-anchor-target id="available-sources">
+<p>将网络搜索结果添加到LLM提示中。</p>
+<doc-anchor-target id="可用来源">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#available-sources">#</doc-anchor-trigger>
-        <span>Available sources</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#可用来源">#</doc-anchor-trigger>
+        <span>可用来源</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="selenium-plugin">
+<doc-anchor-target id="selenium插件">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#selenium-plugin">#</doc-anchor-trigger>
-        <span>Selenium Plugin</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selenium插件">#</doc-anchor-trigger>
+        <span>Selenium插件</span>
     </h3>
 </doc-anchor-target>
-<p>Requires an official server plugin to be installed and enabled.</p>
-<p>See <a href="https://github.com/SillyTavern/SillyTavern-WebSearch-Selenium">SillyTavern-WebSearch-Selenium</a> for more details.</p>
-<p>Supports Google and DuckDuckGo engines.</p>
+<p>需要安装并启用官方服务器插件。</p>
+<p>详情见 <a href="https://github.com/SillyTavern/SillyTavern-WebSearch-Selenium">SillyTavern-WebSearch-Selenium</a>。</p>
+<p>支持Google和DuckDuckGo引擎。</p>
 <doc-anchor-target id="extras-api">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#extras-api">#</doc-anchor-trigger>
         <span>Extras API</span>
     </h3>
 </doc-anchor-target>
-<p>Requires a <code v-pre>websearch</code> module and Chrome/Firefox web browser installed on the host machine.</p>
-<p>Supports Google and DuckDuckGo engines.</p>
+<p>需要在主机上安装<code v-pre>websearch</code>模块和Chrome/Firefox网络浏览器。</p>
+<p>支持Google和DuckDuckGo引擎。</p>
 <doc-anchor-target id="serpapi">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serpapi">#</doc-anchor-trigger>
         <span>SerpApi</span>
     </h3>
 </doc-anchor-target>
-<p>Requires an API key.</p>
-<p>Get the key here: <a href="https://serpapi.com/dashboard">https://serpapi.com/dashboard</a></p>
+<p>需要API密钥。</p>
+<p>在此获取密钥：<a href="https://serpapi.com/dashboard">https://serpapi.com/dashboard</a></p>
 <doc-anchor-target id="searxng">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#searxng">#</doc-anchor-trigger>
         <span>SearXNG</span>
     </h3>
 </doc-anchor-target>
-<p>Requires a SearXNG instance URL (either private or public). Uses HTML format for search results.</p>
-<p>SearXNG preferences string: obtained from SearXNG - preferences - COOKIES - Copy preferences hash</p>
-<p>Learn more: <a href="https://docs.searxng.org/">https://docs.searxng.org/</a></p>
+<p>需要SearXNG实例URL（可以是私有或公开的）。使用HTML格式返回搜索结果。</p>
+<p>SearXNG偏好设置字符串：从SearXNG - 偏好设置 - COOKIES - 复制偏好哈希值中获取</p>
+<p>了解更多：<a href="https://docs.searxng.org/">https://docs.searxng.org/</a></p>
 <doc-anchor-target id="tavily-ai">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#tavily-ai">#</doc-anchor-trigger>
         <span>Tavily AI</span>
     </h3>
 </doc-anchor-target>
-<p>Requires an API key.</p>
-<p>Get the key here: <a href="https://app.tavily.com/">https://app.tavily.com/</a></p>
+<p>需要API密钥。</p>
+<p>在此获取密钥：<a href="https://app.tavily.com/">https://app.tavily.com/</a></p>
 <doc-anchor-target id="koboldcpp">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
         <span>KoboldCpp</span>
     </h3>
 </doc-anchor-target>
-<p>KoboldCpp URL must be provided in Text Completion API settings. KoboldCpp version must be &gt;= 1.81.1 and WebSearch module must be enabled on startup: enable Network =&gt; Enable WebSearch in the GUI launcher or add <code v-pre>--websearch</code> to the command line.</p>
-<p>See: <a href="https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1">https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1</a></p>
+<p>必须在文本完成API设置中提供KoboldCpp URL。KoboldCpp版本必须为&gt;= 1.81.1，并且在启动时必须启用WebSearch模块：在GUI启动器中启用网络 =&gt; 启用WebSearch，或在命令行中添加<code v-pre>--websearch</code>。</p>
+<p>详情见：<a href="https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1">https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1</a></p>
 <doc-anchor-target id="serper">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serper">#</doc-anchor-trigger>
         <span>Serper</span>
     </h3>
 </doc-anchor-target>
-<p>Requires an API key.</p>
-<p>Get the key here: <a href="https://serper.dev/">https://serper.dev/</a></p>
-<doc-anchor-target id="how-to-use">
+<p>需要API密钥。</p>
+<p>在此获取密钥：<a href="https://serper.dev/">https://serper.dev/</a></p>
+<doc-anchor-target id="如何使用">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
-        <span>How to use</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何使用">#</doc-anchor-trigger>
+        <span>如何使用</span>
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Make sure you use the latest version of SillyTavern.</li>
-<li>Install the extension via the &quot;Download Extensions &amp; Assets&quot; menu in SillyTavern.</li>
-<li>Open the &quot;Web Search&quot; extension settings, set your API key or connect to Extras, and enable the extension.</li>
-<li>The web search results will be added to the prompt organically as you chat. <strong>Only user messages trigger the search.</strong></li>
-<li>To include search results more organically, wrap search queries with single backticks: <code v-pre>Tell me about the `latest Ryan Gosling movie`.</code> will produce a search query <code v-pre>latest Ryan Gosling movie</code>.</li>
-<li>Optionally, configure the settings to your liking.</li>
+<li>确保使用最新版本的SillyTavern。</li>
+<li>通过SillyTavern中的“下载扩展和资产”菜单安装扩展。</li>
+<li>打开“网络搜索”扩展设置，设置您的API密钥或连接到Extras，并启用扩展。</li>
+<li>在您聊天时，网络搜索结果将有机地添加到提示中。<strong>只有用户消息会触发搜索。</strong></li>
+<li>要更自然地包含搜索结果，请使用单反引号包裹搜索查询：<code v-pre>告诉我关于`最新的瑞恩·高斯林电影`。</code> 将生成搜索查询<code v-pre>最新的瑞恩·高斯林电影</code>。</li>
+<li>可选地，根据您的喜好配置设置。</li>
 </ol>
-<doc-anchor-target id="settings">
+<doc-anchor-target id="设置">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
-        <span>Settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#设置">#</doc-anchor-trigger>
+        <span>设置</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="general">
+<doc-anchor-target id="常规">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general">#</doc-anchor-trigger>
-        <span>General</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#常规">#</doc-anchor-trigger>
+        <span>常规</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Enabled - toggles the extension on and off.</li>
-<li>Sources = sets the search results source.</li>
-<li>Cache Lifetime - how long (in seconds) the search results are cached for your prompt. Default = one week.</li>
+<li>启用 - 开关扩展。</li>
+<li>来源 = 设置搜索结果来源。</li>
+<li>缓存寿命 - 搜索结果在您的提示中缓存的时间（以秒为单位）。默认 = 一周。</li>
 </ol>
-<doc-anchor-target id="prompt-settings">
+<doc-anchor-target id="提示设置">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-settings">#</doc-anchor-trigger>
-        <span>Prompt Settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#提示设置">#</doc-anchor-trigger>
+        <span>提示设置</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Prompt Budget - sets the maximum capacity of the inserted text (in characters of text, NOT tokens). Rule of thumb: 1 token ~ 3-4 characters, adjust according to your model&#x27;s context limits. Default = 1500 characters.</li>
-<li>Insertion Template - how the result gets inserted into the prompt. Supports the usual macro + special macro: {{query}} for search query and {{text}} for search results.</li>
-<li>Injection Position - where the result goes in the prompt. The same options as for the Author&#x27;s Note: as in-chat injection or before/after system prompt.</li>
+<li>提示预算 - 设置插入文本的最大容量（以文本字符计，不是令牌）。经验法则是：1个令牌约3-4个字符，根据您的模型上下文限制进行调整。默认 = 1500个字符。</li>
+<li>插入模板 - 结果如何插入提示。支持常用宏 + 特殊宏：{{query}} 表示搜索查询，{{text}} 表示搜索结果。</li>
+<li>注入位置 - 结果在提示中的位置。与作者注释相同选项：作为聊天注入或在系统提示之前/之后。</li>
 </ol>
-<doc-anchor-target id="search-activation">
+<doc-anchor-target id="搜索激活">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#search-activation">#</doc-anchor-trigger>
-        <span>Search Activation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#搜索激活">#</doc-anchor-trigger>
+        <span>搜索激活</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Use function tool - uses <a href="../../for-contributors/function-calling/">function calling</a> to activate search or scrape web pages. Must use a supported Chat Completion API and be enabled in the AI Response settings. <strong>Disables all other activation methods when engaged.</strong></li>
-<li>Use Backticks - enables search activation using words encased in single backticks.</li>
-<li>Use Trigger Phrases - enables search activation using trigger phrases.</li>
-<li>Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports &#x60;&#x60; and $1-syntax to reference the matched group. Example: <code v-pre>/what is happening in (.*)/i</code> regex for search query <code v-pre>news in $1</code> will match a message containing <code v-pre>what is happening in New York</code> and trigger the search with the query <code v-pre>news in New York</code>.</li>
-<li>Trigger Phrases - add phrases that will trigger the search, one by one. It can be anywhere in the message, and the query starts from the trigger word and spans to &quot;Max Words&quot; total. To exclude a specific message from processing, it must start with a period, e.g. <code v-pre>.What do you think?</code>. Priority of triggers: first by order in the textbox, then the first one in the user message.</li>
-<li>Max Words - how many words are included in the search query (including the trigger phrase). Google has a limit of about 32 words per prompt. Default = 10 words.</li>
+<li>使用功能工具 - 使用<a href="../../for-contributors/function-calling/">功能调用</a>激活搜索或抓取网页。必须使用支持的聊天完成API并在AI响应设置中启用。<strong>启用时禁用所有其他激活方法。</strong></li>
+<li>使用反引号 - 启用使用单反引号包裹的词触发搜索。</li>
+<li>使用触发短语 - 启用使用触发短语激活搜索。</li>
+<li>正则表达式 - 提供JS风格的正则表达式以匹配用户消息。如果正则表达式匹配，将触发给定查询的搜索。搜索查询支持&#x60;&#x60;和$1语法来引用匹配的组。例如：<code v-pre>/what is happening in (.*)/i</code> 正则表达式用于搜索查询<code v-pre>news in $1</code>，将匹配包含<code v-pre>what is happening in New York</code>的消息，并触发查询<code v-pre>news in New York</code>的搜索。</li>
+<li>触发短语 - 逐一添加将触发搜索的短语。它可以出现在消息中的任何位置，查询从触发词开始，扩展到“最大词数”总数。要排除特定消息的处理，消息必须以句点开头，例如<code v-pre>.你觉得怎么样？</code>。触发优先级：首先按文本框中的顺序，然后是用户消息中的第一个。</li>
+<li>最大词数 - 搜索查询中包含的单词数（包括触发短语）。Google对每个提示的限制约为32个词。默认 = 10个词。</li>
 </ol>
-<doc-anchor-target id="page-scraping">
+<doc-anchor-target id="页面抓取">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#page-scraping">#</doc-anchor-trigger>
-        <span>Page Scraping</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#页面抓取">#</doc-anchor-trigger>
+        <span>页面抓取</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Visit Links - text will be extracted from the visited search result pages and saved to a file attachment.</li>
-<li>Visit Count - how many links will be visited and parsed for text.</li>
-<li>Visit Domain Blacklist - site domains to be excluded from visiting. One per line.</li>
-<li>File Header - file header template, inserted at the start of the text file, has an additional {{query}} macro.</li>
-<li>Block Header - link block template, inserted with the parsed content of every link. Use {{link}} macro for page URL and {{text}} for page content.</li>
-<li>Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank, or just images (if the source supports them).</li>
-<li>Include Images - attach relevant images to the chat. Requires a source that supports images (see below).</li>
+<li>访问链接 - 将从访问的搜索结果页面提取文本并保存到文件附件。</li>
+<li>访问次数 - 将访问并解析多少个链接的文本。</li>
+<li>访问域名黑名单 - 要排除访问的网站域名。每行一个。</li>
+<li>文件头 - 文件头模板，插入文本文件的开头，有额外的{{query}}宏。</li>
+<li>块头 - 链接块模板，随每个链接的解析内容插入。使用{{link}}宏表示页面URL，{{text}}表示页面内容。</li>
+<li>保存目标 - 保存抓取结果的位置。可选选项：触发消息附件，或数据银行的聊天附件，或仅图像（如果来源支持）。</li>
+<li>包括图像 - 将相关图像附加到聊天中。需要支持图像的来源（见下文）。</li>
 </ol>
-<doc-anchor-target id="more-info">
+<doc-anchor-target id="更多信息">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#more-info">#</doc-anchor-trigger>
-        <span>More info</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#更多信息">#</doc-anchor-trigger>
+        <span>更多信息</span>
     </h2>
 </doc-anchor-target>
-<p>Search results from the latest query will stay included in the prompt until the next valid query is found.
-If you want to ask additional questions without accidentally triggering the search, start your message with a period.</p>
+<p>来自最新查询的搜索结果将保留在提示中，直到找到下一个有效查询。
+如果您想提出额外问题而不意外触发搜索，请在消息开头使用句点。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -390,37 +390,37 @@ If you want to ask additional questions without accidentally triggering the sear
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Web Search function tool always overrides other triggers if enabled and available.</p>
+<p>如果启用并可用，网络搜索功能工具始终覆盖其他触发器。</p>
         </div>
     </div>
 </div>
-<p>Priority of triggers (if multiple are enabled):</p>
+<p>触发优先级（如果启用了多个）：</p>
 <ol>
-<li>Backticks.</li>
-<li>Regular expressions.</li>
-<li>Trigger phrases.</li>
+<li>反引号。</li>
+<li>正则表达式。</li>
+<li>触发短语。</li>
 </ol>
-<p>To discard all previous queries from processing, start the user message with an exclamation mark, for example, a user message <code v-pre>!Now let's talk about...</code> will discard this and every message above it.</p>
-<p>This extension also provides a <code v-pre>/websearch</code> slash command to use in STscript. More info here: <a href="../../usage/st-script/#extension-commands">STscript Language Reference</a></p>
+<p>要丢弃所有之前的查询处理，请在用户消息开头使用感叹号，例如，用户消息<code v-pre>!现在让我们谈谈...</code>将丢弃此消息及其上面的所有消息。</p>
+<p>此扩展还提供了一个<code v-pre>/websearch</code>斜杠命令，可在STscript中使用。更多信息见：<a href="../../usage/st-script/#extension-commands">STscript语言参考</a></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/websearch (links=on|off snippets=on|off [query]) – performs a web search query. Use named arguments to specify what to return - page snippets (default: on), full parsed pages (default: off) or both.
+<pre class="language-none"><code v-pre class="language-none">/websearch (links=on|off snippets=on|off [query]) – 执行网络搜索查询。使用命名参数指定返回内容 - 页面片段（默认：开启）、完整解析页面（默认：关闭）或两者兼有。
 
-Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
+示例：/websearch links=off snippets=on 如何制作三明治</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="what-can-be-included-in-the-search-result">
+<doc-anchor-target id="搜索结果中可以包含什么">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-can-be-included-in-the-search-result">#</doc-anchor-trigger>
-        <span>What can be included in the search result?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#搜索结果中可以包含什么">#</doc-anchor-trigger>
+        <span>搜索结果中可以包含什么？</span>
     </h3>
 </doc-anchor-target>
-<p><strong>Thesaurus:</strong></p>
+<p><strong>词典：</strong></p>
 <ul>
-<li>Answer box: Direct answer to the question.</li>
-<li>Knowledge graph: Encyclopedic knowledge about the topic.</li>
-<li>Page snippets: Relevant extracts from the web pages.</li>
-<li>Relevant questions: Questions and answers to similar topics.</li>
-<li>Images: Relevant images.</li>
+<li>答案框：问题的直接答案。</li>
+<li>知识图谱：关于主题的百科知识。</li>
+<li>页面片段：网页的相关摘录。</li>
+<li>相关问题：类似主题的问题和答案。</li>
+<li>图像：相关图像。</li>
 </ul>
 <doc-anchor-target id="serpapi-1">
     <h4>
@@ -429,23 +429,23 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Answer box.</li>
-<li>Knowledge graph.</li>
-<li>Page snippets (max 10).</li>
-<li>Relevant questions (max 10).</li>
-<li>Images (max 10).</li>
+<li>答案框。</li>
+<li>知识图谱。</li>
+<li>页面片段（最多10个）。</li>
+<li>相关问题（最多10个）。</li>
+<li>图像（最多10个）。</li>
 </ol>
-<doc-anchor-target id="selenium-plugin-and-extras-api">
+<doc-anchor-target id="selenium插件和extras-api">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#selenium-plugin-and-extras-api">#</doc-anchor-trigger>
-        <span>Selenium Plugin and Extras API</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selenium插件和extras-api">#</doc-anchor-trigger>
+        <span>Selenium插件和Extras API</span>
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Google - answer box, knowledge graph, page snippets.</li>
-<li>DuckDuckGo - page snippets.</li>
+<li>Google - 答案框，知识图谱，页面片段。</li>
+<li>DuckDuckGo - 页面片段。</li>
 </ol>
-<p><strong>Selenium Plugin</strong> can additionaly provide images.</p>
+<p><strong>Selenium插件</strong>还可以额外提供图像。</p>
 <doc-anchor-target id="searxng-1">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#searxng-1">#</doc-anchor-trigger>
@@ -453,9 +453,9 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Infobox.</li>
-<li>Page snippets.</li>
-<li>Images.</li>
+<li>信息框。</li>
+<li>页面片段。</li>
+<li>图像。</li>
 </ol>
 <doc-anchor-target id="tavily-ai-1">
     <h4>
@@ -464,9 +464,9 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Answer.</li>
-<li>Page contents.</li>
-<li>Images (up to 5).</li>
+<li>答案。</li>
+<li>页面内容。</li>
+<li>图像（最多5个）。</li>
 </ol>
 <doc-anchor-target id="koboldcpp-1">
     <h4>
@@ -475,8 +475,8 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Page titles.</li>
-<li>Page snippets.</li>
+<li>页面标题。</li>
+<li>页面片段。</li>
 </ol>
 <doc-anchor-target id="serper-1">
     <h4>
@@ -485,11 +485,11 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Answer box.</li>
-<li>Knowledge graph.</li>
-<li>Page snippets.</li>
-<li>Relevant questions.</li>
-<li>Images.</li>
+<li>答案框。</li>
+<li>知识图谱。</li>
+<li>页面片段。</li>
+<li>相关问题。</li>
+<li>图像。</li>
 </ol>
 
                                 
@@ -563,6 +563,6 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Web Search", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "网络搜索", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
